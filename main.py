@@ -1,1 +1,2 @@
-print(f"Hello world {50} ")
+var = 50 * 50 
+print(var)
