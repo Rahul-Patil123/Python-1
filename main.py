@@ -1,2 +1,4 @@
-var = 50 * 50 
-print(var)
+def function():
+    print("Running Function")
+function()
+    
