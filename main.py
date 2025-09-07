@@ -1,4 +1,5 @@
-import helper as hp
-
+from helper import function
+import os 
+print(os.name)
 print("Using helper Module...")
-hp.function()
+function()
