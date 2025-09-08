@@ -8,4 +8,4 @@ deadline = input_list[1]
 deadline_date = datetime.datetime.strptime(deadline,"%d.%m.%Y")
 today_date = datetime.datetime.today()
 time_remaining = deadline_date - today_date
-print(f"Time remaining till your deadline is : {time_remaining}")
+print(f"Time remaining till your deadline is : {time_remaining.days}")
