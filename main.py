@@ -5,6 +5,7 @@ product_details = inv_list["Sheet1"]
 
 product_per_company = {}
 inventory_per_company = {}
+inventory_less_10 = {}
 
 for product_row in range(2, product_details.max_row + 1):
     supplier_name = product_details.cell(product_row, 4).value
@@ -14,7 +15,6 @@ for product_row in range(2, product_details.max_row + 1):
     else:
         product_per_company[supplier_name] = 1
         
-print("These are total products per company:", product_per_company)
 
 for product_row in range(2, product_details.max_row + 1):
     supplier_name = product_details.cell(product_row, 4).value
@@ -25,4 +25,12 @@ for product_row in range(2, product_details.max_row + 1):
     else:
         inventory_per_company[supplier_name] = inventory_value * inventory_price
 
-print("These are total inventory per company:", inventory_per_company)
+for product_row in range(2, product_details.max_row + 1):
+    product_id = int(product_details.cell(product_row, 1).value)
+    inventory = int(product_details.cell(product_row, 2).value)
+    if inventory < 10:
+        inventory_less_10[product_id] = inventory
+
+print("These are total products per company: ", product_per_company)
+print("These are total inventory per company: ", inventory_per_company)
+print("These are product whose inventory less than 10: ", inventory_less_10)
