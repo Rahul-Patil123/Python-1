@@ -1,13 +1,27 @@
-import os
+import openpyxl
 
-# Get the current working directory
-current_directory = os.getcwd()
-print(f"Current working directory: {current_directory}")
+inv_list = openpyxl.load_workbook("inventory.xlsx")
+product_details = inv_list["Sheet1"]
 
-# List files and directories in the current path
-contents = os.listdir('.')
-print(f"Contents of current directory: {contents}")
+product_per_company = {}
+inventory_per_company = {}
 
-# Check if a path exists
-file_exists = os.path.exists("my_file.txt")
-print(f"Does 'my_file.txt' exist? {file_exists}")
+for product_row in range(2, product_details.max_row + 1):
+    supplier_name = product_details.cell(product_row, 4).value
+    
+    if supplier_name in product_per_company:
+        product_per_company[supplier_name] += 1
+    else:
+        product_per_company[supplier_name] = 1
+        
+print("These are total products per company:", product_per_company)
+
+for product_row in range(2, product_details.max_row + 1):
+    supplier_name = product_details.cell(product_row, 4).value
+    inventory_value = product_details.cell(product_row, 2).value
+    if supplier_name in inventory_per_company:
+        inventory_per_company[supplier_name] += inventory_value
+    else:
+        inventory_per_company[supplier_name] = inventory_value
+
+print("These are total inventory per company:", inventory_per_company)
