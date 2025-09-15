@@ -13,7 +13,3 @@ class User:
     def get_user_details(self):
         print(f"User name is {self.name}\nUser Email is {self.email}\nCurrent Job title is {self.current_job_title}")
         
-rahul = User("rahulpatilccis@gmail.com","Rahul Ganeshwar Patil", "changeme", "SRE")
-rahul.get_user_details()
-rahul.change_job_title("DevOps Engineer")
-rahul.get_user_details()
