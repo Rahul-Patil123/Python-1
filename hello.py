@@ -1,0 +1,8 @@
+f = open("file.txt", "rb")
+f.seek(4)
+print(f.read(7))
+f.seek(-12,2)
+x = f.read(5)
+print(x)
+f.seek(2)
+y = f.tell()
