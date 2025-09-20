@@ -26,7 +26,7 @@ def load_api_key(path=KEY_FILE):
 API_KEY = load_api_key()
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
-WAKE_WORD = "hello"
+WAKE_WORD = "hey"
 
 # -------------------------------
 # FUNCTIONS
