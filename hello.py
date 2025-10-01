@@ -1,4 +1,4 @@
-f = open("file.txt", "rb")
+f = open("file.txt", "wrb")
 f.seek(4)
 print(f.read(7))
 f.seek(-1,2)
