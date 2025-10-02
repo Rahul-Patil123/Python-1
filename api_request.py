@@ -15,5 +15,8 @@ def list_github_user_repos(username):
                 print(f"- {repo['name']} (URL: {repo['html_url']})")
         else:
             print(f"No public repositories found for {username}.")
+            
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching repositories: {e}")
 github_username = "Rahul-Patil123"  
 list_github_user_repos(github_username)
